@@ -20,18 +20,23 @@ def time_setup(datatime):
 
 def get_info(url):
     response = requests.get(url)
-    data = response.json()
-    data = data["features"][0]["attributes"]
-    time_setup(data["Last_Update"])
+    if response.status_code == 200:
+        data = response.json()
+        data = data["features"][0]["attributes"]
+        time_setup(data["Last_Update"])
+    else:
+        data = None
+        print(response.status_code)
     return data
 
 
 def main():
     # while True:
     data = get_info(URL)
-    items = ["Country_Region", "Confirmed", "Active", "Recovered", "Deaths"]
-    for item in items:
-        print(item, data[item])
+    if data:
+        items = ["Country_Region", "Confirmed", "Active", "Recovered", "Deaths"]
+        for item in items:
+            print(item, data[item])
 
 
 main()
