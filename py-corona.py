@@ -29,7 +29,7 @@ def get_info(url):
 def main():
     # while True:
     data = get_info(URL)
-    items = ["Country_Region", "Confirmed", "Active", "Deaths"]
+    items = ["Country_Region", "Confirmed", "Active", "Recovered", "Deaths"]
     for item in items:
         print(item, data[item])
 
