@@ -31,7 +31,6 @@ def get_info(url):
 
 
 def main():
-    # while True:
     data = get_info(URL)
     if data:
         items = ["Country_Region", "Confirmed", "Active", "Recovered", "Deaths"]
