@@ -1,5 +1,5 @@
 # py-corona.py
-simple parser for data about corona virus concerning Greece
+simple parser for data about corona virus concerning Greece  
 due to unstable api backend, furher development was halted
 
 
